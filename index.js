@@ -1,6 +1,7 @@
 'use strict';
 
-var helper = require('configurable-gulp-helper')('merge');
+var helper = require('configurable-gulp-helper');
+var verify = helper.verifyStreamPrerequisite('merge');
 
 /**
  * Recipe:
@@ -22,7 +23,7 @@ function merge() {
 
 	var context = this,
 		tasks = context.tasks,
-		runTask = helper(context);
+		runTask = verify(context);
 
 	if (tasks.length === 1) {
 		return runTask(tasks[0]);
