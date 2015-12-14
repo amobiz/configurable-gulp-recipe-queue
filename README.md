@@ -1,2 +1,2 @@
-# configurable-gulp-recipe-merge
-Configurable gulp recipe plugin that merge multiple streams into one interleaved stream.
+# configurable-gulp-recipe-queue
+Configurable gulp recipe plugin that pipe queued streams progressively.

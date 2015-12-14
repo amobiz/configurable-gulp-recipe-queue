@@ -1,21 +1,21 @@
 {
-  "name": "configurable-gulp-recipe-merge",
+  "name": "configurable-gulp-recipe-queue",
   "version": "0.1.0",
-  "description": "Configurable gulp recipe plugin that merge multiple streams into one interleaved stream.",
+  "description": "Configurable gulp recipe plugin that pipe queued streams progressively.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amobiz/configurable-gulp-recipe-merge.git"
+    "url": "git+https://github.com/amobiz/configurable-gulp-recipe-queue.git"
   },
   "keywords": [
     "configurable-gulp-recipe",
     "configurable-gulp-recipes",
     "stream",
-    "merge",
-    "merge stream",
+    "queue",
+    "queue stream",
     "plugin",
     "plugins",
     "recipe",
@@ -27,9 +27,9 @@
   "author": "Amobiz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/amobiz/configurable-gulp-recipe-merge/issues"
+    "url": "https://github.com/amobiz/configurable-gulp-recipe-queue/issues"
   },
-  "homepage": "https://github.com/amobiz/configurable-gulp-recipe-merge#readme",
+  "homepage": "https://github.com/amobiz/configurable-gulp-recipe-queue#readme",
   "devDependencies": {
     "mocha": "^2.3.4",
     "mocha-cases": "^0.1.4"
