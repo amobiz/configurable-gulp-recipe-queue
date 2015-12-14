@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "configurable-gulp-helper": "git+https://github.com/amobiz/configurable-gulp-helper.git",
-    "gulp-util": "^3.0.7"
+    "gulp-util": "^3.0.7",
+    "merge-stream": "^1.0.0"
   }
 }
