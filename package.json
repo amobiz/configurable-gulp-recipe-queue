@@ -1,0 +1,41 @@
+{
+  "name": "configurable-gulp-recipe-merge",
+  "version": "0.1.0",
+  "description": "Configurable gulp recipe plugin that merge multiple streams into one interleaved stream.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amobiz/configurable-gulp-recipe-merge.git"
+  },
+  "keywords": [
+    "configurable-gulp-recipe",
+    "configurable-gulp-recipes",
+    "stream",
+    "merge",
+    "merge stream",
+    "plugin",
+    "plugins",
+    "recipe",
+    "recipes",
+    "configurable",
+    "configuration",
+    "configurations"
+  ],
+  "author": "Amobiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amobiz/configurable-gulp-recipe-merge/issues"
+  },
+  "homepage": "https://github.com/amobiz/configurable-gulp-recipe-merge#readme",
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "mocha-cases": "^0.1.4"
+  },
+  "dependencies": {
+    "configurable-gulp-helper": "git+https://github.com/amobiz/configurable-gulp-helper.git",
+    "gulp-util": "^3.0.7"
+  }
+}
