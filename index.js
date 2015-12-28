@@ -1,10 +1,7 @@
 'use strict';
 
-var helper = require('configurable-gulp-helper');
+var helper = require('gulp-ccr-helper');
 var verify = helper.verifyStreamPrerequisite('queue');
-
-/*jshint node: true */
-/*global process*/
 
 /**
  * Recipe:
@@ -42,9 +39,9 @@ function queue() {
 queue.expose = [];
 
 queue.schema = {
-	"title": "queue",
-	"description": "Pipe queued streams progressively",
-	"properties": {
+	title: 'queue',
+	description: 'Pipe queued streams progressively',
+	properties: {
 	}
 };
 
