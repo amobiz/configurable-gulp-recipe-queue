@@ -1,7 +1,6 @@
 'use strict';
 
-var helper = require('gulp-ccr-helper');
-var verify = helper.verifyStreamPrerequisite('queue');
+var helper = require('gulp-ccr-stream-helper')('queue');
 
 /**
  * Recipe:
@@ -13,34 +12,47 @@ var verify = helper.verifyStreamPrerequisite('queue');
  * Note:
  *  Some kind of stream version of gulp.series().
  *
- * @config 針對本 task 的 configuration。
- * @tasks 傳入的子 tasks 為 configurableTask，是尚未綁定 config 的 task 形式。
- *
  */
 function queue() {
 	// lazy loading required modules.
 	var StreamQueue = require('streamqueue');
 
-	var context = this,
-		tasks = context.tasks,
-		runTask = verify(context);
+	var gulp = this.gulp;
+	var config = this.config;
+	var upstream = this.upstream;
+	var tasks = this.tasks;
+
+	var streams, streamQueue;
+
+	helper.prerequisite(this, true, 1);
 
 	if (tasks.length === 1) {
 		return runTask(tasks[0]);
 	}
 
-	var streams = tasks.map(runTask),
-		streamQueue = new StreamQueue({
-			objectMode: true
-		});
+	streams = tasks.map(runTask);
+	streamQueue = new StreamQueue({
+		objectMode: true
+	});
 	return streamQueue.done.apply(streamQueue, streams);
+
+	function runTask(task) {
+		var context;
+
+		context = {
+			gulp: gulp,
+			config: config,
+			upstream: upstream
+		};
+		return helper.runTask(context, task);
+	}
 }
 
 queue.expose = [];
 
 queue.schema = {
 	title: 'queue',
-	description: 'Pipe queued streams progressively',
+	description: 'Pipe queued streams progressively.',
 	properties: {
 	}
 };

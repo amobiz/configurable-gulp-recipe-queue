@@ -1,2 +1,2 @@
 # gulp-ccr-queue
-Cascading Configurable Gulp Recipe for gulp-chef that pipe queued streams progressively.
+Pipe queued streams progressively. A cascading configurable Gulp recipe for gulp-chef.
