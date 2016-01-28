@@ -1,7 +1,7 @@
 {
   "name": "gulp-ccr-queue",
   "version": "0.1.0",
-  "description": "Pipe queued streams progressively. A cascading configurable Gulp recipe for gulp-chef.",
+  "description": "Pipe queued streams progressively. A cascading configurable gulp recipe for gulp-chef.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -37,14 +37,10 @@
   },
   "homepage": "https://github.com/gulp-cookery/gulp-ccr-queue#readme",
   "peerDependencies": {
-    "gulp-chef": "git+https://github.com/gulp-cookery/gulp-chef.git"
-  },
-  "devDependencies": {
-    "mocha": "^2.3.4",
-    "mocha-cases": "^0.1.4"
+    "gulp-chef": "^0.1.0"
   },
   "dependencies": {
-    "gulp-ccr-stream-helper": "git+https://github.com/gulp-cookery/gulp-ccr-stream-helper.git",
+    "gulp-ccr-stream-helper": "^0.1.0",
     "streamqueue": "^1.1.1"
   }
 }

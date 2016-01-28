@@ -2,23 +2,19 @@
 
 var helper = require('gulp-ccr-stream-helper')('queue');
 
-/**
- * Recipe:
- * 	Serial Join (from gulp.js cheatsheet p.2)
- *
- * Ingredients:
- * 	streamqueue
- *
- * Note:
- *  Some kind of stream version of gulp.series().
- *
- */
+var schema = {
+	title: 'queue',
+	description: 'Pipe queued streams progressively.',
+	type: 'object',
+	properties: {
+	}
+};
+
 function queue() {
 	// lazy loading required modules.
 	var StreamQueue = require('streamqueue');
 
 	var gulp = this.gulp;
-	var config = this.config;
 	var upstream = this.upstream;
 	var tasks = this.tasks;
 
@@ -41,22 +37,13 @@ function queue() {
 
 		context = {
 			gulp: gulp,
-			config: config,
+			config: {},
 			upstream: upstream
 		};
 		return helper.runTask(context, task);
 	}
 }
 
-queue.expose = [];
-
-queue.schema = {
-	title: 'queue',
-	description: 'Pipe queued streams progressively.',
-	properties: {
-	}
-};
-
-queue.type = 'stream';
-
 module.exports = queue;
+module.exports.schema = schema;
+module.exports.type = 'stream';
